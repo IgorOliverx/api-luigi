@@ -22,7 +22,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
 
     //Listar usuários individualmente
-    Route::post('/users/{user}', [UserController::class, 'show'])->name('users.show');
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 
     //Atualizar usuário
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
