@@ -95,6 +95,9 @@ class UserController extends Controller
                 'password' => 'required|string'
             ]);
 
+            $password = $dados['password'];
+            $dados['password'] = Hash::make($password);
+
            $user = $this->user->where('id', $user->id)->update($dados);
             DB::commit();
 
