@@ -24,7 +24,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = $this->user->orderBy('id', 'desc')->paginate(15);
+        $users = $this->user->orderBy('id', 'desc')->get();
 
         return response()->json([
            'status' => 'true',
