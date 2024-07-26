@@ -41,8 +41,9 @@ class UserController extends Controller
             DB::beginTransaction();
         try{
             $dados = $request->validate([
+                'id' => 'required|string',
                 'name' => 'required|string',
-                'email' => 'required|email',
+                'email' => 'required|string',
                 'password' => 'required|string'
             ]);
 
